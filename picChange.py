@@ -6,10 +6,13 @@ Created on Sat Mar  3 12:12:27 2018
 """
 
 import os
-import time
-
 import cv2
+import time
+import argparse
+import numpy as np
+from PIL import Image  
 
+#变换图片大小
 def alter(path,object):
     result = []
     s = os.listdir(path)
@@ -23,4 +26,26 @@ def alter(path,object):
         cv2.imwrite(object+os.sep+'%s.jpg' % fileName, img)
         count = count + 1
 
-alter('C:\\Users\\Yaodong Su\\Desktop\\GraduationThesis\\MZhang-master\\picture\\stop','C:\\Users\\Yaodong Su\\Desktop\\GraduationThesis\\MZhang-master\\picture\\stop2')
+#alter('C:\\Users\\Yaodong Su\\Desktop\\GraduationThesis\\MZhang-master\\picture\\stop','C:\\Users\\Yaodong Su\\Desktop\\GraduationThesis\\MZhang-master\\picture\\stop2')
+
+
+    
+
+        
+#水平翻转图片函数        
+rootdir = r'C:\\Users\\Yaodong Su\\Desktop\\GraduationThesis\\自拍素材\图片\\right'  # 指明被遍历的文件夹
+for parent, dirnames, filenames in os.walk(rootdir):
+    for filename in filenames:
+        print('parent is :' + parent)
+        print('filename is :' + filename)
+        currentPath = os.path.join(parent, filename)
+        print('the fulll name of the file is :' + currentPath)
+ 
+        im = Image.open(currentPath)
+        out = im.transpose(Image.FLIP_LEFT_RIGHT)
+        newname=r"C:\\Users\\Yaodong Su\\Desktop\\GraduationThesis\\自拍素材\图片\\right2"+'\\'+filename
+        out.save(newname)    
+        
+        
+
+
