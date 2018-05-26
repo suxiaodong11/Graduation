@@ -1,0 +1,1 @@
+由于百度云盘不支持上传 __init__.py 空文件，特将 python\caffe\proto中的 __init__.py 去掉
