@@ -4,7 +4,7 @@
 利用大量盲道图像和GoogleNet网络结构对深度学习的Caffe神经网络进行训练，最终得到能识别盲道图像的model。盲道图像采取盲人第一视角拍摄，图像根据盲道所在图像中的位置分成left、right、middle、warning四类图片，最终系统会根据盲道在图像的位置给出修正偏差的语音提示，即对left或right类图片给出盲人向右或向左调整的反馈，对warning类图像给出注意反馈，对middle类图片则不给予反馈。最终利用model对盲道图像做出判断，在此基础上给出语音反馈，实行对盲人的指引。目前在windows在平台测试model预测效果。
   
 ## 系统设想图  
-https://github.com/suxiaodong11/Graduation/blob/master/%E7%B3%BB%E7%BB%9F%E7%A4%BA%E6%84%8F%E5%9B%BE.png
+![这里写图片描述](https://github.com/suxiaodong11/Graduation/blob/master/%E7%B3%BB%E7%BB%9F%E7%A4%BA%E6%84%8F%E5%9B%BE.png)
 
 环境要求：
 python2.7
@@ -20,4 +20,3 @@ python文件包含caffe的接口
 show中的图片用于演示
 
 voice中即为反馈的语音文件
-
